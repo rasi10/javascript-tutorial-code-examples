@@ -1,0 +1,45 @@
+<!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Javascript Functions</title>
+    </head>  
+    <body>  
+      <script type="text/javascript">
+        var randomString =  "A long "+ "string that "+"goes on and on";
+        document.write(randomString, "<br>");
+        document.write("String length: ", randomString.length, "<br/>");
+        document.write("Index for \"goes\": ", randomString.indexOf("goes"), "<br>");
+
+        
+        document.write(randomString.slice(19,23)+ "<br/>");
+        document.write(randomString.slice(19) + "<br/>");
+        document.write(randomString.substr(19, 4) + "<br/>");
+        document.write(randomString.replace("and on","forever") + "<br/>");
+        document.write("At index 2: ", randomString.charAt(2) + "<br/>");
+        document.write(randomString.toUpperCase(), "<br/>");
+        document.write(randomString.toLowerCase(), "<br/>");
+
+        var randomStringArray = randomString.split(" ");
+        document.write(randomStringArray+"<br>");
+        randomString = randomString.trim();
+        document.write(randomString+"<br>");
+
+        //String styles
+        var stringToStyle = "Random String";
+        document.write("<br>")
+        document.write("Big: ", stringToStyle.big(), "<br>")
+        document.write("Bold: ", stringToStyle.bold(), "<br>")
+        document.write("Font Color: ", stringToStyle.fontcolor("blue"), "<br>")
+        document.write("Font Size: ", stringToStyle.fontsize("8em"), "<br>")
+        document.write("Italics: ", stringToStyle.italics(), "<br>")
+        document.write("Google: ", stringToStyle.link(), "<br>")
+        document.write("Small: ", stringToStyle.small(), "<br>")
+        document.write("Strike: ", stringToStyle.strike(), "<br>")
+        document.write("Sub: ", stringToStyle.sub(), "<br>")
+        document.write("Sup: ", stringToStyle.sup(), "<br>")
+
+      </script>
+    </body>
+  </html>
+    
