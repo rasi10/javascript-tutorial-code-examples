@@ -6,7 +6,95 @@
     </head>  
     <body>  
       <script type="text/javascript">
-     
+        var tomSmith = ["Tom Smith", "123 Main" , 120.50];
+        document.write("1st Index: ", tomSmith[0], "<br/>");
+        document.write("2nd Index: ", tomSmith[1], "<br/>");
+        document.write("3rd Index: ", tomSmith[2], "<br/>");
+        //adding an element to an array
+        document.write("<br/>");
+        tomSmith[3] = "tSmith@aol.com";
+        for (var i =0; i < tomSmith.length;i++) {
+          document.write(tomSmith[i]+"<br/>");
+        }
+
+        //overriding values
+        document.write("<br/>");
+        tomSmith.splice(2,1,"Pittsburgh", "PA");
+        for (var i =0; i < tomSmith.length;i++) {
+          document.write(tomSmith[i]+"<br/>");
+        }
+
+        //deleting element at index 4
+        document.write("<br/>");
+        tomSmith.splice(4,1); 
+        for (var i =0; i < tomSmith.length;i++) {
+          document.write(tomSmith[i]+"<br/>");
+        }
+
+
+        //Converting to string
+        document.write("<br/>");
+        document.write("Array: ", tomSmith.valueOf(), "<br/>");
+        document.write("Array: ", tomSmith.toString(), "<br/>");
+        document.write("Array: ", tomSmith.join(", "), "<br/>");
+
+        document.write("<br/>");
+        delete tomSmith[3];
+        for (var i =0; i < tomSmith.length;i++) {
+          document.write(tomSmith[i]+"<br/>");
+        }
+
+        document.write("<br/>");
+        tomSmith.sort()
+        for (var i =0; i < tomSmith.length;i++) {
+          document.write(tomSmith[i]+"<br/>");
+        }
+
+        document.write("<br/>");
+        tomSmith.reverse()
+        for (var i =0; i < tomSmith.length;i++) {
+          document.write(tomSmith[i]+"<br/>");
+        }
+
+
+        //sorting in ascending and descending order
+        var numbers = [4,3,9,1,20,43]
+        numbers.sort(function(x,y){
+          return x-y;
+        });
+        document.write("Num Array: ",numbers.toString(),"<br/>");
+
+        numbers.sort(function(x,y){
+          return y-x;
+        });
+        document.write("Num Array: ",numbers.toString(),"<br/>");
+
+        //combining two arrays
+        document.write("<br/>");
+        var combinedArray = numbers.concat(tomSmith);
+        for (var i = 0; i < combinedArray.length ;i++) {
+          document.write(combinedArray[i]+"<br/>");
+        }
+
+        combinedArray.pop();
+        combinedArray.push("+462837623876");
+        document.write("<br/>");
+        for (var i = 0; i < combinedArray.length ;i++) {
+          document.write(combinedArray[i]+"<br/>");
+        }
+
+        document.write("<br/>")
+        combinedArray.shift(); //deleting the first element
+        for (var i = 0; i < combinedArray.length ;i++) {
+          document.write(combinedArray[i]+"<br/>");
+        }
+
+        document.write("<br/>")
+        combinedArray.unshift(43); //deleting the first element
+        for (var i = 0; i < combinedArray.length ;i++) {
+          document.write(combinedArray[i]+"<br/>");
+        }
+
       </script>
     </body>
   </html>
