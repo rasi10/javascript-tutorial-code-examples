@@ -1,8 +1,20 @@
 	<!doctype html>
 	  <html>
 	    <head>
-	      <meta charset="utf-8">
-	      <title>Javascript Functions</title>
+	      	<meta charset="utf-8">
+	      	<title>Javascript Functions</title>
+			<style type="text/css">
+			    body {font-size: 1.6em;}
+			    .hidden {display:none;}
+			    .show {display:inline !important;}
+			    button {
+			    border: 2px solid black; background: #E5E4E2;
+			    font-size: .5em; font-weight: bold; color: black;
+			    padding: .8em 2em;
+			    margin-top: .4em;
+	  			}
+    		</style>
+
 	    </head>  
 	    <body>  
 	    	<script type="text/javascript">
@@ -37,11 +49,14 @@
 			<img src="pic.jpg" id="logo">
 			<button id=""logoButton>Get Logo</button>
 			<input id='mouseInput' type='text' size="30"><br/>
+
 			Mouse X: <input type="text id="mouseX"><br/>
 			Mouse X: <input type="text id="mouseY"><br/>
 
+			<button id="clearInputs"> Clear inputs</button>
 
 			<script type="text/javascript">
+
 		      	function getChar(event){
 		      		if(event.which==null){
 		      			return String.fromCharCode(event.keyCode);
@@ -51,9 +66,44 @@
 		      			return null;
 		      		}
 		      	}
+
+	      		document.getElementById('charInput').onkeypress = 
+	      		function(event){
+	      			var char = getChar(event || window.event)
+	      			if(!char) return false;
+
+	      			document.getElementById('keyData').innerHTML = char + " was clicked";
+	      			return true;
+	      		}
+		      	
+		      	document.getElementById('charInput').onfocus = 
+		      	function(event){
+		      		document.getElementById('keyData').innerHTML = "Input gained focus";
+		      	}
+
+		      	document.getElementById('charInput').onselect = 
+		      	function(event){
+
+		      	}
+
+
+
+		//Clear all input elements
+				document.getElementById('clearInputs').onclick = function(event) {
+				  var inputElements = document.getElementsByTagName('input');
+
+				  for (var i = 0; i < inputElements.length; i++) {
+				  if (inputElements[i].type == "text") {
+				    inputElements[i].value = "";
+				  }
+				 }
+				}
+
+
 	     
 	      	</script>
 
 	    </body>
 	  </html>
 	    
+
