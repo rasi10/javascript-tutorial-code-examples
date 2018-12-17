@@ -30,8 +30,60 @@
         document.write("Current HOST: ", window.location.hostname, "<br/>");
         document.write("Current path: ", window.location.pathname, "<br/>");
         document.getElementById('goToGoogle').onclick = function(event){
-          
+          window.location.href = "http://google.com  "      
         }
+
+        document.getElementById('forwardPage').onclick = function(event){
+          history.forward();
+
+          //jumping two locations ahead in the history
+          //history.go(2);
+        }
+
+        document.getElementById('backPage').onclick = function(event){
+          history.back();
+          //jumping two locations back in the history
+          //history.go(-2);
+        }
+
+        document.getElementById('reload').onclick = function(event) {
+          window.location.reload(true);
+        }
+
+        //getting all the paragraphs
+        var pElements = document.getElementsByTagName('p');
+        pElements[1].style.backgroundColor = '#EFDECD';
+
+        document.childNodes[1].style.backgroundColor = "#FAEBD7";
+
+        var sampDiv2 = document.getElementById('sampDiv2');
+        sampDiv2.childNodes[0].style.backgroundColor = "#F0FFFF";
+
+        sampDiv2.childNodes[0].childNodes[1].style.backgroundColor = "#BFAFB2";
+
+        //the result is three and it means text. If it is one, it is non-text.
+        document.write("Node Type: ", sampDiv2.childNodes[0].childNodes[0].nodeType, "<br />");
+
+        document.write("Node Name: ", sampDiv2.childNodes[0].childNodes[0].nodeName, "<br />");
+
+        var nttLogo2 = document.getElementById('logo2');
+        document.write("Logo has alt: ",nttLogo2.hasAttribute("alt"), "<br />");
+        
+        nttLogo2.setAttribute("alt","NTT logo2");
+        document.write("Logo alt value: ", nttLogo2.getAttribute("alt"), "<br />");
+
+        var attribList = document.getElementById('logo2').attributes;
+
+        for(i=0;i<attribList.length;i++){
+          document.write("Attribute ",i, " : ", attribList[i].nodeName, " : ", attribList[i].nodeValue, "<br />");
+        }
+
+        var paragraph3 = document.createElement("p");
+        paragraph3.setAttribute("id","paragraph");
+        paragraph3.innerHTML = "Proin eget turpis eget quam luctus malesada ut ac nulla. "
+
+        sampDiv2.appendChild(paragraph3);
+        sampDiv2.insertBefore(paragraph3,sampDiv2.childNodes[0]);
 
 
       </script>
