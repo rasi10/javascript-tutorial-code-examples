@@ -1,0 +1,55 @@
+<!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <style type="text/css">
+      body {font-size: 1.6em;}
+      .hidden {display:none;}
+      .show {display:inline !important;}
+      button {
+        border: 2px solid black; background: #E5E4E2;
+        font-size: .5em; font-weight: bold; color: black;
+        padding: .8em 2em;
+        margin-top: .4em;
+      }
+    </style>
+      <title>Javascript Functions</title>
+    </head>  
+    <body>  
+      <div>
+        Enter your name:
+
+        <input id="name "type="text" name="name" size="30" onblur="isTheFieldEmpty(this, document.getElementById('name_help'))" >
+
+        <span id="name_help"></span>
+      </div>
+
+
+      <script type="text/javascript">
+
+        function editNodeText(regex, input, helpId, helpMessage){
+          if(!regex.test(input)){
+            if(helpId!=null){
+              while (helpId.childNodes[0]){
+                helpId.removeChild(helpId.childNodes[0]);
+              }
+              helpId .appendChild(document.createTextNode(helpMessage));
+            }else{
+              if(helpId !=null){
+                while (helpId.childNodes[0]){
+                 helpId.removeChild(helpId.childNodes[0]);
+              }
+              }
+            }
+          }
+        }
+
+
+      function isTheFieldEmpty(inputField, helpId){
+        return editNodeText(/^[A-Za-z\.\' \-]{1,15}\s?[A-Za-z\.\' \-]{1,15}\s?[A-Za-z\.\' \-]{1,15}/, inputField.value, helpId, "Please enter a valid name.");        
+      }
+
+      </script>
+    </body>
+  </html>
+    
